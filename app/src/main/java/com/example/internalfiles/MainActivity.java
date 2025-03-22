@@ -45,6 +45,11 @@ public class MainActivity extends AppCompatActivity {
         tV.setText(textFile);
     }
 
+    /**
+     * Saves the user input from EditText to the internal file.
+     *
+     * @param view The view
+     */
     public void goSave(View view) {
         try {
             FileOutputStream fOS = openFileOutput(FILENAME, MODE_APPEND);
@@ -62,6 +67,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Reads and returns the contents of the internal file.
+     *
+     * @return The contents of the file as a String.
+     */
     public String getTextFile() {
         String text;
         try {
@@ -85,6 +95,11 @@ public class MainActivity extends AppCompatActivity {
         return text;
     }
 
+    /**
+     * Clears the contents of the internal file and resets UI components.
+     *
+     * @param view The view
+     */
     public void goReset(View view) {
         try {
             FileOutputStream fOS = openFileOutput(FILENAME, MODE_PRIVATE);
@@ -101,6 +116,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Saves user input and closes the application.
+     *
+     * @param view The view
+     */
     public void goExit(View view) {
         goSave(view);
         finish();
